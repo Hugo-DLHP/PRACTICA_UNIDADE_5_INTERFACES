@@ -1,0 +1,21 @@
+body {
+    background-color: aquamarine;
+}
+
+#tablero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tablero canvas {  
+    background: repeating-linear-gradient(
+        rgba(13, 152, 27, 0.5),
+        rgba(13, 152, 27, 0.5) 2vh,
+        rgba(4, 171, 21, 0.5) 2vh,
+        rgba(4, 171, 21, 0.5) 4vh
+    );
+    border: 2px solid black;
+}
+
