@@ -1,8 +1,14 @@
-body {
-    background-color: aquamarine;
+@font-face {
+    font-family: 'minecraft';
+    src: url('./fonts/minecraft.ttf');
 }
 
-#tablero {
+* {
+    font-family: minecraft;
+}
+
+body {
+    background-color: aquamarine;
     height: 100vh;
     display: flex;
     justify-content: center;
