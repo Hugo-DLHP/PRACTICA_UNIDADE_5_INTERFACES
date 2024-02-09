@@ -15,7 +15,8 @@ body {
     align-items: center;
 }
 
-.accordion-body, .accordion-item {
+.accordion-body,
+.accordion-item {
     width: 30vw;
     text-align: center;
 }
@@ -25,16 +26,23 @@ body {
     justify-content: center;
 }
 
-.button {
+.button button {
+    color: #FAFAFA;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow:
+        3px 3px #53a7ea,
+        4px 4px #53a7ea,
+        5px 5px #53a7ea;
+    cursor: pointer;
     margin-top: 10%;
 }
 
-.button a:hover {
-    box-shadow:
-    3px 3px #53a7ea,
-    4px 4px #53a7ea,
-    5px 5px #53a7ea;
-    transform: translateX(-3px);
+.button button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }
 
 .titulo h1 {
@@ -50,7 +58,7 @@ body {
         opacity: 0;
         transform: translateY(150px);
     }
-    
+
     to {
         opacity: 100;
         transform: translateY(0) scale(1.5);

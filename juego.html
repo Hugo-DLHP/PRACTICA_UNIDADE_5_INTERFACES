@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styleJuego.css">
-    <script src="script/main.js" type="text/javascript" defer></script>
+    <script src="src/main.js" type="text/javascript" defer></script>
     <title>Practica 5</title>
 </head>
 <body>
-    <div id="puntos">
-    </div>
-    <div id="tablero">
-        <canvas id="juego" width="500" height="450"></canvas>
-    </div>    
+    <div class="container">
+        <div id="marcador"></div>
+        <div class="titulo"> 
+            <h1>SNAKE</h1>
+        </div>
+        <div id="tablero">
+            <canvas id="juego" width="500" height="450"></canvas>
+            <div id="start">Start</div>
+        </div> 
+    </div>   
 </body>
 </html>

@@ -7,20 +7,53 @@
     font-family: minecraft;
 }
 
-body {
-    background-color: aquamarine;
-    height: 100vh;
+.container {
     display: grid;
     grid-template-columns: 25vw auto 30vw;
     grid-template-rows: 15vh auto;
     gap: 10px;
+    width: 100vw;
+    height: 100vh;
+    --color: rgba(0, 115, 19, 0.3);
+    background-color: #191a1a;
+    background-image: linear-gradient(180deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent),
+        linear-gradient(45deg,
+            transparent 24%,
+            var(--color) 35%,
+            var(--color) 26%,
+            transparent 17%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent);
+    background-size: 55px 55px;
 }
 
-#puntos {
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    color: white;
+    margin-top: 10vh;
+}
+
+#marcador {
     background-color: rgb(119, 231, 136);
     width: 15vw;
     height: 10vh;
     border: 5px solid rgb(71, 150, 83);
+    font-size: 5vh;
     margin-top: 5vh;
     margin-left: 5vw;
     margin-bottom: 10px;
@@ -34,15 +67,36 @@ body {
     grid-column: 2;
     grid-row: 2;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10vh;
 }
 
+#start {
+    display: flex;
+    font-size: 4vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 10vw;
+    height: 10vh;
+    border-radius: 23px;
+    border: 5px solid rgb(71, 150, 83);
+    background: #77E788;
+    box-shadow: 7px 7px 14px #305c36,
+        -7px -7px 14px #beffda;
+}
+
+#start:active {
+    box-shadow: inset 7px 7px 14px #305c36,
+        inset -7px -7px 14px #beffda;
+}
+
+
 #tablero canvas {
-    background: repeating-linear-gradient(rgba(13, 152, 27, 0.5),
-            rgba(13, 152, 27, 0.5) 2vh,
-            rgba(4, 171, 21, 0.5) 2vh,
-            rgba(4, 171, 21, 0.5) 4vh);
+    background: repeating-linear-gradient(rgba(13, 152, 27, 0.8),
+            rgba(13, 152, 27, 0.8) 2vh,
+            rgba(4, 171, 21, 0.8) 2vh,
+            rgba(4, 171, 21, 0.8) 4vh);
     border: 4px solid black;
 }
