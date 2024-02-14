@@ -39,12 +39,6 @@ const aumentarMarcador = () => {
     marcador.innerText = puntos;
 }
 
-function dibujarComida() {
-    ctx.beginPath()
-    ctx.rect(comida.posX, comida.posY, 10, 10)
-    ctx.stroke()
-}
-
 function crearComida() {
     let min = Math.ceil(5);
     let max = Math.floor(25);
@@ -56,6 +50,129 @@ function crearComida() {
     }
 
     return { posX, posY }
+}
+
+function dibujarComida() {
+    ctx.beginPath()
+    ctx.rect(comida.posX, comida.posY, 10, 10)
+    ctx.stroke()
+}
+
+function dibujaCoso() {
+    for (let unidadDeCoso of coso) {
+        ctx.beginPath()
+        ctx.rect(unidadDeCoso.posX, unidadDeCoso.posY, 10, 10)
+        ctx.stroke()
+    }
+}
+
+function ajustarPosicion() {
+    if (direccion === DIRECCIONES.DERECHA) cabezaPosX +=10;
+    else if (direccion === DIRECCIONES.IZQUIERDA) cabezaPosX -=10;
+    else if (direccion === DIRECCIONES.ABAJO) cabezaPosY +=10;
+    else if (direccion === DIRECCIONES.ARRIBA) cabezaPosY -=10;
+    else throw new Error("La dirección tiene un valor inválido asignado");
+
+    coso.unshift({ posX: cabezaPosX, posY: cabezaPosY })
+    coso.pop()
+}
+
+function agregarUnidadACoso() {
+    let direccionUltimaUnidad 
+    let ultimaUnidad
+
+    if (coso.length === 1) {
+        direccionUltimaUnidad = direccion
+        ultimaUnidad = coso[0]
+    } else {
+        ultimaUnidad = coso[coso.length - 1]
+        let penultimaUnidad = coso[coso.length - 2]
+
+        let diferenciaX = penultimaUnidad.posX - ultimaUnidad.posX
+        let diferenciaY = penultimaUnidad.posY - ultimaUnidad.posY
+
+        if (diferenciaX > 0) {
+            direccionUltimaUnidad = DIRECCIONES.DERECHA
+        } else if (diferenciaX < 0) {
+            direccionUltimaUnidad = DIRECCIONES.IZQUIERDA
+        } else if (diferenciaY > 0) {
+            direccionUltimaUnidad = DIRECCIONES.ABAJO
+        } else if (diferenciaY <0) {
+            direccionUltimaUnidad = DIRECCIONES.ARRIBA
+        }
+    }
+
+    switch(direccionUltimaUnidad) {
+        case DIRECCIONES.ARRIBA:
+            nuevaUnidad = { posX: ultimaUnidad.posX, posY: ultimaUnidad.posY + 10 }
+            break;
+        case DIRECCIONES.ABAJO:
+            nuevaUnidad = { posX: ultimaUnidad.posX, posY: ultimaUnidad.posY - 10 }
+            break;
+        case DIRECCIONES.DERECHA:
+            nuevaUnidad = { posX: ultimaUnidad.posX + 10, posY: ultimaUnidad.posY }
+            break;
+        case DIRECCIONES.IZQUIERDA:
+            nuevaUnidad = { posX: ultimaUnidad.posX - 10, posY: ultimaUnidad.posY }
+            break;
+    }
+
+    coso.push(nuevaUnidad)
+}
+
+function revisarColisiones() {
+    if (cabezaPosX < 0 || cabezaPosY < 0 || cabezaPosX >= mapWidth || cabezaPosY >= mapHeight) {
+        console.log("Has chocado con la pared!")
+        gameOver()
+    }
+
+    if (posicionesDeCoso.size !== coso.length) {
+        console.log("Has chocado contigo mismo!")
+        gameOver()
+    }
+
+    if (posicionesDeCoso.has(`${comida.posX}${comida.posY}`)) {
+        comida = crearComida()
+        incrementarPuntos()
+        agregarUnidadACoso()
+
+    }
+}
+
+const direccionEventos = e => {
+    if (e.code === "ArrowUp" && direccion !== DIRECCIONES.ABAJO) {
+        direccion = DIRECCIONES.ARRIBA
+    } else if (e.code === "ArrowDown" && direccion !== DIRECCIONES.ARRIBA) {
+        direccion = DIRECCIONES.ABAJO
+    } else if (e.code === "ArrowLeft" && direccion !== DIRECCIONES.DERECHA) {
+        direccion = DIRECCIONES.IZQUIERDA
+    } else if (e.code === "ArrowRight" && direccion !== DIRECCIONES.IZQUIERDA) {
+        direccion = DIRECCIONES.DERECHA
+    }
+}
+
+function actualizarPosicionesDeCoso() {
+    posicionesDeCoso = new Set()
+    coso.forEach(unidadDeCoso => posicionesDeCoso.add(`${unidadDeCoso.posX}${unidadDeCoso.posY}`))
+}
+
+
+function gameLoop() {
+    limpiarCanvas()
+    ajustarPosicion()
+    actualizarPosicionesDeCoso()
+    dibujaCoso()
+    dibujarComida()
+    revisarColisiones()
+}
+
+function incrementarPuntos() {
+    puntos++
+    aumentarMarcador()
+}
+
+function limpiarCanvas() {
+    ctx.clearRect(0, 0, juego.clientWidth, juego.height);
 }
 
 function setGame() {
@@ -72,6 +189,11 @@ const startGame = () => {
     gameLoop()
     document.addEventListener('keyup', direccionEventos);
     intervaloDeJuego = setInterval(gameLoop, FPS);
+}
+
+function gameOver() {
+    clearInterval(intervaloDeJuego)
+    limpiarCanvas()
 }
 
 start.addEventListener('click', startGame)

@@ -39,6 +39,19 @@
     background-size: 55px 55px;
 }
 
+h1 a {
+    text-decoration: none;
+    background: linear-gradient(90deg,
+            #866ee7,
+            #ea60da,
+            #ed8f57,
+            #fbd41d,
+            #2cca91);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .titulo {
     display: flex;
     align-items: center;
