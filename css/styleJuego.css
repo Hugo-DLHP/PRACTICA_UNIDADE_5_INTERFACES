@@ -41,15 +41,169 @@
 
 h1 a {
     text-decoration: none;
-    background: linear-gradient(90deg,
-            #866ee7,
-            #ea60da,
-            #ed8f57,
-            #fbd41d,
-            #2cca91);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    animation-name: prueba;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes prueba {
+    0% {
+        background: linear-gradient(0deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    8% {
+        background: linear-gradient(30deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    16% {
+        background: linear-gradient(60deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    24% {
+        background: linear-gradient(90deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    32% {
+        background: linear-gradient(120deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    40% {
+        background: linear-gradient(150deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    48% {
+        background: linear-gradient(180deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    56% {
+        background: linear-gradient(210deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    64% {
+        background: linear-gradient(240deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    72% {
+        background: linear-gradient(270deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    80% {
+        background: linear-gradient(300deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    88% {
+        background: linear-gradient(330deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    96% {
+        background: linear-gradient(360deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }
 
 .titulo {
