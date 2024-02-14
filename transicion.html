@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleTransicion.css">
+    <title></title>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="loader">
+            <div class="layer">loading</div>
+            <div class="layer">loading</div>
+        </div>
+        <div id="button" style="display:none;"> <!-- Inicialmente oculto -->
+            <button onclick="redireccionar()">
+                TODO LISTO
+            </button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const loader = document.getElementById('loader');
+            const button = document.getElementById('button');
+
+            setTimeout(function () {
+                button.style.display = 'block';
+                loader.style.display = 'none';
+            }, 5000);
+        };
+
+        function redireccionar() {
+            window.location.href = "juego.html";
+        }
+    </script>
+</body>
+
+</html>
