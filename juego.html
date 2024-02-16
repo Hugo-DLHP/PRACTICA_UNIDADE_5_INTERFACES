@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styleJuego.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="src/main.js" type="text/javascript" defer></script>
-    <title>Practica 5</title>
+    <link rel="icon" href="./img/snake.ico" type="image/x-icon">
+    <title>SNAKE</title>
 </head>
+
 <body>
     <div class="container">
         <div id="marcador"></div>
-        <div class="titulo"> 
-            <h1><a href="index.html">SNAKE</a></h1>
+        <div class="titulo">
+            <div data-glitch="SNAKE" class="glitch">SNAKE</div>
         </div>
         <div id="tablero">
             <canvas id="juego" width="500" height="450"></canvas>
-            <div id="start">Start</div>
-        </div> 
-    </div>   
+            <div class="boton">
+                <button onclick="startGame()">
+                    Start
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

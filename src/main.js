@@ -1,6 +1,5 @@
 const juego = document.getElementById("juego")
 const marcador = document.getElementById("marcador")
-const start = document.getElementById("start")
 
 
 const ctx = juego.getContext("2d")
@@ -31,7 +30,7 @@ let comida = crearComida()
 
 let puntos = 0
 
-let objetivo_puntos = 0;
+let objetivo_puntos = 2250;
 
 let intervaloDeJuego;
 
@@ -195,5 +194,3 @@ function gameOver() {
     clearInterval(intervaloDeJuego)
     limpiarCanvas()
 }
-
-start.addEventListener('click', startGame)

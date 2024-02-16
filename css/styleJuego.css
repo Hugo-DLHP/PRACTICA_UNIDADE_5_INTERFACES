@@ -14,195 +14,113 @@
     gap: 10px;
     width: 100vw;
     height: 100vh;
-    --color: rgba(0, 115, 19, 0.3);
-    background-color: #191a1a;
-    background-image: linear-gradient(180deg,
-            transparent 24%,
-            var(--color) 25%,
-            var(--color) 26%,
-            transparent 27%,
-            transparent 74%,
-            var(--color) 75%,
-            var(--color) 76%,
-            transparent 77%,
-            transparent),
-        linear-gradient(45deg,
-            transparent 24%,
-            var(--color) 35%,
-            var(--color) 26%,
-            transparent 17%,
-            transparent 74%,
-            var(--color) 75%,
-            var(--color) 76%,
-            transparent 77%,
+    background-color: #111111;
+    background-image: linear-gradient(32deg,
+            rgba(8, 8, 8, 0.74) 30px,
             transparent);
-    background-size: 55px 55px;
+    background-size: 60px 60px;
+    background-position: -5px -5px;
 }
 
-h1 a {
-    text-decoration: none;
-    animation-name: prueba;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
+.glitch {
+    position: relative;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+    animation: shift 1s ease-in-out infinite alternate;
 }
 
-@keyframes prueba {
+.glitch:before,
+.glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.glitch:before {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #8b00ff;
+    z-index: -1;
+}
+
+.glitch:after {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #00e571;
+    z-index: -2;
+}
+
+@keyframes glitch {
     0% {
-        background: linear-gradient(0deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        transform: translate(0);
     }
 
-    8% {
-        background: linear-gradient(30deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    
-    16% {
-        background: linear-gradient(60deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    24% {
-        background: linear-gradient(90deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    32% {
-        background: linear-gradient(120deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    20% {
+        transform: translate(-3px, 3px);
     }
 
     40% {
-        background: linear-gradient(150deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        transform: translate(-3px, -3px);
     }
 
-    48% {
-        background: linear-gradient(180deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    56% {
-        background: linear-gradient(210deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    64% {
-        background: linear-gradient(240deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    72% {
-        background: linear-gradient(270deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    60% {
+        transform: translate(3px, 3px);
     }
 
     80% {
-        background: linear-gradient(300deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        transform: translate(3px, -3px);
     }
 
-    88% {
-        background: linear-gradient(330deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    to {
+        transform: translate(0);
     }
-    
-    96% {
-        background: linear-gradient(360deg,
-                #866ee7,
-                #ea60da,
-                #ed8f57,
-                #fbd41d,
-                #2cca91);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+}
+
+@keyframes shift {
+
+    0%,
+    40%,
+    44%,
+    58%,
+    61%,
+    65%,
+    69%,
+    73%,
+    100% {
+        transform: skewX(0deg);
+    }
+
+    41% {
+        transform: skewX(10deg);
+    }
+
+    42% {
+        transform: skewX(-10deg);
+    }
+
+    59% {
+        transform: skewX(40deg) skewY(10deg);
+    }
+
+    60% {
+        transform: skewX(-40deg) skewY(-10deg);
+    }
+
+    63% {
+        transform: skewX(10deg) skewY(-5deg);
+    }
+
+    70% {
+        transform: skewX(-50deg) skewY(-20deg);
+    }
+
+    71% {
+        transform: skewX(10deg) skewY(-10deg);
     }
 }
 
@@ -239,25 +157,115 @@ h1 a {
     margin-top: 10vh;
 }
 
-#start {
-    display: flex;
-    font-size: 4vh;
-    align-items: center;
-    justify-content: center;
+.boton {
     margin-top: 5%;
-    width: 10vw;
-    height: 10vh;
-    border-radius: 23px;
-    border: 5px solid rgb(71, 150, 83);
-    background: #77E788;
-    box-shadow: 7px 7px 14px #305c36,
-        -7px -7px 14px #beffda;
 }
 
-#start:active {
-    box-shadow: inset 7px 7px 14px #305c36,
-        inset -7px -7px 14px #beffda;
+button,
+button::after {
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    position: relative;
 }
+
+button::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'Start';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+}
+
+button:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+    background-color: transparent;
+    border: 3px solid rgb(0, 255, 213);
+}
+
+button:hover {
+    text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+}
+
+button:hover {
+    background-color: transparent;
+    border: 1px solid rgb(0, 255, 213);
+    box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+}
+
+@keyframes glitch_4011 {
+    0% {
+        clip-path: var(--move1);
+        transform: translate(0px, -10px);
+    }
+
+    10% {
+        clip-path: var(--move2);
+        transform: translate(-10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--move3);
+        transform: translate(10px, 0px);
+    }
+
+    30% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    40% {
+        clip-path: var(--move5);
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        clip-path: var(--move6);
+        transform: translate(-10px, 10px);
+    }
+
+    60% {
+        clip-path: var(--move1);
+        transform: translate(10px, -10px);
+    }
+
+    70% {
+        clip-path: var(--move3);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--move2);
+        transform: translate(10px, -10px);
+    }
+
+    90% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    100% {
+        clip-path: var(--move1);
+        transform: translate(0);
+    }
+}
+
+
 
 
 #tablero canvas {
