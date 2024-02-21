@@ -15,7 +15,7 @@
             <div class="layer">loading</div>
             <div class="layer">loading</div>
         </div>
-        <div id="button" style="display:none;"> <!-- Inicialmente oculto -->
+        <div id="button" style="display:none;"> 
             <button onclick="redireccionar()">
                 TODO LISTO
             </button>
@@ -23,14 +23,26 @@
     </div>
 
     <script>
+        function esperarSegundos(segundos) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve();
+                }, segundos * 1000); 
+            });
+        }
+
         window.onload = function () {
             const loader = document.getElementById('loader');
             const button = document.getElementById('button');
 
-            setTimeout(function () {
-                button.style.display = 'block';
-                loader.style.display = 'none';
-            }, 5000);
+            esperarSegundos(4)
+                .then(() => {
+                    button.style.display = 'block';
+                    loader.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Ocurrió un error:', error);
+                });
         };
 
         function redireccionar() {
