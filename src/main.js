@@ -1,5 +1,6 @@
 const juego = document.getElementById("juego")
 const marcador = document.getElementById("marcador")
+const gameover = document.getElementById("gameover")
 
 
 const ctx = juego.getContext("2d")
@@ -181,6 +182,7 @@ function setGame() {
     cabezaPosX = 10;
     cabezaPosY = 10;
     direccion = DIRECCIONES.DERECHA
+    gameover.style.animation = 'none';
 }
 
 const startGame = () => {
@@ -193,4 +195,5 @@ const startGame = () => {
 function gameOver() {
     clearInterval(intervaloDeJuego)
     limpiarCanvas()
+    gameover.style.animation = 'zoomIn 2.7s linear forwards';
 }

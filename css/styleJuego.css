@@ -151,10 +151,31 @@
 #tablero {
     grid-column: 2;
     grid-row: 2;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10vh;
+}
+
+#gameover {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+    animation: none;
+    opacity: 0;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;       
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .boton {
@@ -264,8 +285,6 @@ button:hover {
         transform: translate(0);
     }
 }
-
-
 
 
 #tablero canvas {
